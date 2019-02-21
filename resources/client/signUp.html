@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="Icon.ico">
+
+        <title>SignUp</title>
+
+        <script src="/client/js/jquery-3.3.1.min.js"></script>
+        <script src="/client/js/popper.min.js"></script>
+        <script src="/client/js/bootstrap.min.js"></script>
+        <script src="/client/js/js.cookie.min.js"></script>
+        <script src="/client/js/querystring.js"></script>
+
+        <link href="/client/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/client/css/signin.css" rel="stylesheet">
+
+        <script src="/client/js/signUp.js"></script>
+</head>
+
+<body class="text-center" onload="pageLoad()">
+
+    <div><a href="signIn.html" class="btn btn-outline-dark btn-sm" role="button">Sign In</a></div>
+
+    <form id="newUserForm" class="form-signin">
+
+        <img class="mb-4" src="Icon.ico" alt="" width="72" height="72">
+
+        <h4 class="h4 mb-lg-4 font-weight-normal">Please enter the fields</h4>
+
+        <label class="sr-only">Username</label>
+        <input name="username" class="form-control" placeholder="Username" required autofocus>
+
+        <h3 class="text-center"></h3>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required>
+
+        <h3 class="text-center"></h3>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <h3 class="text-center"></h3>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="confirm password" type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+
+        <button class="btn btn-lg btn-primary btn-block">Sign up</button>
+
+    </form>
+    </body>
 </html>

@@ -39,4 +39,37 @@ public class UserController {
         }
         return "Error: Can't find user account.";
     }
+
+    @POST
+    @Path("new")
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.TEXT_PLAIN)
+    public String newUser(@FormParam("username") String username,
+                          @FormParam("name") String name,
+                          @FormParam("password") String password,
+                          @FormParam("confirm password") String passwordConfirm) {
+        Logger.log("User " + username + " is attempting to sign up");
+
+        UserService.selectAllInto(User.users);
+
+        for (User u: User.users) {
+            if (u.getUsername().toLowerCase().equals(username.toLowerCase())) {
+                return "Error: Username already exists";
+            }
+        }
+        if (!password.equals(passwordConfirm)) {
+            return "Error: Passwords do not match";
+        }
+
+        int newid = User.nextId();
+
+        String token = UUID.randomUUID().toString();
+
+        String Status = UserService.insert(new User(newid, username, name, password, token));
+        if (Status.equals("OK")) {
+            Logger.log("Created user " + username);
+            return token;
+        } else {
+            return "Error: cannot create new user";
+        }
 }
