@@ -52,7 +52,7 @@ public class UserController {
 
         UserService.selectAllInto(User.users);
 
-        for (User u: User.users) {
+        for (User u : User.users) {
             if (u.getUsername().toLowerCase().equals(username.toLowerCase())) {
                 return "Error: Username already exists";
             }
@@ -72,4 +72,5 @@ public class UserController {
         } else {
             return "Error: cannot create new user";
         }
+    }
 }
