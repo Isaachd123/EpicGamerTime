@@ -1,4 +1,4 @@
-package server.controllers;
+/*package server.controllers;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -12,5 +12,4 @@ public class UserController {
     public String login(@FormParam(), @FormParam()) {
         return;
     }
-}
-//unfinished
+}*/
