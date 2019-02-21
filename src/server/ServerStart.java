@@ -8,7 +8,6 @@ import org.glassfish.jersey.servlet.ServletContainer;
 
 public class ServerStart {
 
-
     //localhost:8081/client/index.html
 
     public static void main(String[] args) {
