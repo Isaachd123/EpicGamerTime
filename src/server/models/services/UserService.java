@@ -115,4 +115,20 @@ public class UserService {
         }
     }
 
+    public static String validateSessionCookie(javax.ws.rs.core.Cookie sessionCookie) {
+        if (sessionCookie != null) {
+            String token = sessionCookie.getValue();
+            String result = UserService.selectAllInto(User.users);
+            if (result.equals("OK")) {
+                for (User u : User.users) {
+                    if (u.getToken().equals(token)) {
+                        Logger.log("Valid session token received.");
+                        return u.getUsername();
+                    }
+                }
+            }
+        }
+        Logger.log("Error: Invalid user session token");
+        return null;
+    }
 }

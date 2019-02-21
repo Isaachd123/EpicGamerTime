@@ -5,7 +5,11 @@ import server.models.User;
 import server.models.services.UserService;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.MediaType;
+import javax.xml.bind.DatatypeConverter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
 @Path("user/")
@@ -72,5 +76,30 @@ public class UserController {
         } else {
             return "Error: cannot create new user";
         }
+    }
+
+    @GET
+    @Path("get")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getUser(@CookieParam("token") Cookie sessionCookie) {
+
+        String currentUser = UserService.validateSessionCookie(sessionCookie);
+
+        if (currentUser == null) {
+            return "";
+        } else {
+            return currentUser;
+        }
+    }
+
+    public static String hasher(String text, String salt) {
+        try {
+            MessageDigest hasher = MessageDigest.getInstance("SHA-256");
+            hasher.update((text + salt).getBytes());
+            return DatatypeConverter.printHexBinary(hasher.digest()).toUpperCase();
+        } catch (NoSuchAlgorithmException nsae) {
+            return nsae.getMessage();
+        }
+
     }
 }
