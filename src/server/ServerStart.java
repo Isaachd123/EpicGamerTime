@@ -8,9 +8,11 @@ import org.glassfish.jersey.servlet.ServletContainer;
 
 public class ServerStart {
 
-    //localhost:8081/client/index.html
+    //localhost:8081/client/home.html
 
     public static void main(String[] args) {
+
+        DatabaseConnection.open("Database.db");
 
         ResourceConfig config = new ResourceConfig();
         config.packages("server");
