@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="Icon.ico">
+
+    <title>SignIn</title>
+
+    <script src="/client/js/jquery-3.3.1.min.js"></script>
+    <script src="/client/js/popper.min.js"></script>
+    <script src="/client/js/bootstrap.min.js"></script>
+    <script src="/client/js/js.cookie.min.js"></script>
+    <script src="/client/js/querystring.js"></script>
+
+    <link href="/client/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/client/css/signin.css" rel="stylesheet">
+
+    <script src="/client/js/signIn.js"></script>
+</head>
+
+    <body class="text-center" onload="pageLoad()">
+
+    <div><a href="home.html" class="btn btn-outline-dark btn-sm" role="button">Home</a></div>
+
+        <form id="loginForm" class="form-signin">
+
+            <img class="mb-4" src="Icon.ico" alt="" width="72" height="72">
+
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+                    <label class="sr-only">Username</label>
+                        <input name="username" class="form-control" placeholder="Username" required autofocus>
+
+                    <label for="inputPassword" class="sr-only">Password</label>
+                        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+                <div>
+                    <label>
+                        <a href="signUp.html">Click here to sign up</a>
+                    </label>
+                </div>
+
+            <button class="btn btn-lg btn-primary btn-block">Sign in</button>
+
+        </form>
+
+    </body>
+
+</html>
