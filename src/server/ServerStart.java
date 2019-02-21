@@ -8,8 +8,6 @@ import org.glassfish.jersey.servlet.ServletContainer;
 
 public class ServerStart {
 
-    //localhost:8081/client/home.html
-
     public static void main(String[] args) {
 
         DatabaseConnection.open("Database.db");
